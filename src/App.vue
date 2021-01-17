@@ -1,60 +1,127 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld/>
+    <v-main class="background-apps">
+      <div class="mt-16"></div>
+      <v-row align="center">
+        <v-col cols="12" sm="12" md="12" lg="7">
+          <p class="title-apps font-weight-black ml-16 mr-16">
+            Kumpulan Peraturan
+          </p>
+          <p class="desc-apps ml-16 mr-16">
+            Aplikasi kumpulan peraturan terlengkap di Indonesia, cari aplikasi,
+            pilih, unduh dan bagikan koleksi peraturan langsung dari aplikasi.
+          </p>
+          <div class="mt-8"></div>
+          <v-btn class="ml-16 mr-16 primary" x-large @click="openStore()"> Download </v-btn>
+        </v-col>
+        <v-col cols="12" sm="12" md="12" lg="5" align="center">
+          <!-- <v-img
+            class="ml-16 mr-16"
+            contain
+            max-width="700px"
+            :src="require('./assets/apps.png')"
+          ></v-img> -->
+          <v-carousel hide-delimiters show-arrows-on-hover cycle>
+            <v-carousel-item>
+              <v-img
+                contain
+                max-width="270px"
+                :src="require('./assets/home.png')"
+              ></v-img>
+            </v-carousel-item>
+            <v-carousel-item>
+              <v-img
+                contain
+                max-width="270px"
+                :src="require('./assets/peraturan.png')"
+              ></v-img>
+            </v-carousel-item>
+            <v-carousel-item>
+              <v-img
+                contain
+                max-width="270px"
+                :src="require('./assets/detail.png')"
+              ></v-img>
+            </v-carousel-item>
+          </v-carousel>
+        </v-col>
+      </v-row>
+      <v-row class="ma-16">
+        <v-spacer></v-spacer>
+        <v-col cols="12" sm="4" md="3" lg="3">
+          <v-card dark>
+            <v-card-title>Beranda</v-card-title>
+            <v-divider></v-divider>
+            <v-list>
+              <v-list-item>
+                <v-list-item-content> Peraturan Terbaru </v-list-item-content>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-content> Kategori Terbaru </v-list-item-content>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-content> Instansi Peraturan </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card>
+        </v-col>
+        <v-col cols="12" sm="4" md="3" lg="3">
+          <v-card dark>
+            <v-card-title>Peraturan</v-card-title>
+            <v-divider></v-divider>
+            <v-list>
+              <v-list-item>
+                <v-list-item-content> Daftar Peraturan </v-list-item-content>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-content> Pencarian Peraturan </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card>
+        </v-col>
+        <v-col cols="12" sm="4" md="3" lg="3">
+          <v-card dark>
+            <v-card-title>Detail</v-card-title>
+            <v-divider></v-divider>
+            <v-list>
+              <v-list-item>
+                <v-list-item-content> Detail Peraturan </v-list-item-content>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-content> Unduh Peraturan </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card>
+        </v-col>
+        <v-spacer></v-spacer>
+      </v-row>
+      <div class="mb-16"></div>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
+  name: "App",
 
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
+  methods: {
+    openStore() {
+      window.open('https://play.google.com/store/apps/details?id=com.nanolite.kumper', '_blank ')
+    }
+  }
 };
 </script>
+
+<style scoped>
+.title-apps {
+  font-size: 5rem;
+  font-family: cursive;
+}
+.desc-apps {
+  font-size: 2.5rem;
+}
+.background-apps {
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+}
+</style>
