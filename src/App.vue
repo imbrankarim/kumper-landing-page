@@ -11,8 +11,14 @@
             Aplikasi kumpulan peraturan terlengkap di Indonesia, cari aplikasi,
             pilih, unduh dan bagikan koleksi peraturan langsung dari aplikasi.
           </p>
-          <div class="mt-8"></div>
-          <v-btn class="ml-16 mr-16 primary" x-large @click="openStore()"> Download </v-btn>
+          <!-- <div class="mt-8"></div> -->
+          <v-img
+            class="ml-12 mr-12"
+            style="cursor: pointer"
+            max-width="270px"
+            @click="openStore()"
+            :src="require('./assets/badge.png')"
+          ></v-img>
         </v-col>
         <v-col cols="12" sm="12" md="12" lg="5" align="center">
           <!-- <v-img
@@ -106,9 +112,12 @@ export default {
 
   methods: {
     openStore() {
-      window.open('https://play.google.com/store/apps/details?id=com.nanolite.kumper', '_blank ')
-    }
-  }
+      window.open(
+        "https://play.google.com/store/apps/details?id=com.nanolite.kumper",
+        "_blank "
+      );
+    },
+  },
 };
 </script>
 
